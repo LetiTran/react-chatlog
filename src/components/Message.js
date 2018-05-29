@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import Timestamp from './Timestamp';
 
 class Message extends Component {
+
+  isRemote = () => {
+  if (this.props.sender === 'Estragon') {
+    return 'remote chat-entry';
+  }
+  return 'local chat-entry';
+}
+
   render() {
+
     const sender = this.props.sender;
     const body = this.props.body;
     const time = <Timestamp time={this.props.time}/>
 
     return(
-      <article className="chat-entry local">
+      <article className={this.isRemote() }>
       <h3 className="entry-name "> {sender}</h3>
       <div>
       <div className="entry-body entry-bubble"> {body} <br /><p className="entry-time">{time}</p></div>
