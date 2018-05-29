@@ -10,8 +10,10 @@ class Message extends Component {
     return(
       <article className="chat-entry local">
       <h3 className="entry-name "> {sender}</h3>
-      <p className="entry-body"> {body}</p>
-      <p className="entry-time"> {time}</p>
+      <div>
+      <div className="entry-body entry-bubble"> {body} <br /><p className="entry-time">{time}</p></div>
+
+      </div>
       </article>
     );
   }
