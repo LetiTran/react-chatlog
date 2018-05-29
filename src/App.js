@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import chatMessages from './data/messages.json';
 
+import ChatLog from './components/ChatLog.js'
+
 class App extends Component {
   render() {
-    console.log(chatMessages);
+    // console.log(chatMessages);
 
     return (
       <div className="App">
@@ -13,6 +15,9 @@ class App extends Component {
         </header>
         <main className="App-main">
         </main>
+
+        <ChatLog messages={chatMessages} />
+
       </div>
     );
   }
