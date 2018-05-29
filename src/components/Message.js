@@ -3,12 +3,13 @@ import Timestamp from './Timestamp';
 
 class Message extends Component {
 
+  // Define if display is as local(left) or remote(right) message:
   isRemote = () => {
-  if (this.props.sender === 'Estragon') {
-    return 'remote chat-entry';
+    if (this.props.sender === 'Estragon') {
+      return 'remote chat-entry';
+    }
+    return 'local chat-entry';
   }
-  return 'local chat-entry';
-}
 
   render() {
 
@@ -17,7 +18,7 @@ class Message extends Component {
     const time = <Timestamp time={this.props.time}/>
 
     return(
-      <article className={this.isRemote() }>
+      <article className={this.isRemote()}>
       <h3 className="entry-name "> {sender}</h3>
       <div>
       <div className="entry-body entry-bubble"> {body} <br /><p className="entry-time">{time}</p></div>

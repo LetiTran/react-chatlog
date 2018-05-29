@@ -2,8 +2,10 @@ import React, { Component } from 'react';
 import Message from './Message.js';
 
 class ChatLog extends Component {
+
   render() {
-    console.log(this.props)
+    // console.log(this.props)
+
     const messages = this.props.messages;
 
     const messageComponents = messages.map((message) => {
@@ -26,6 +28,3 @@ class ChatLog extends Component {
 }
 
 export default ChatLog;
-
-
-// const time = <Timestamp time={Date.now()}/>
